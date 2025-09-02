@@ -356,12 +356,9 @@ export default function Home() {
     <>
       {/* Flash screen UI removed */}
       
-      <main className="flex h-screen bg-white font-body overflow-hidden">
-        <Toaster />
-
-        {/* ChatWidget Component */}
-        <ChatWidget />
-      </main>
+      {/* Directly render only the toaster and ChatWidget component without main wrapper */}
+      <Toaster />
+      <ChatWidget />
     </>
   );
 }
