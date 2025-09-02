@@ -1,0 +1,891 @@
+/* Intro.js styles */
+@import 'intro.js/minified/introjs.min.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Ocean Slate Light Mode */
+    --background: 220 25% 98%; /* #F7F9FC */
+    --foreground: 240 20% 12%; /* #1E1E2F */
+    --card: 0 0% 100%; /* #FFFFFF */
+    --card-foreground: 240 20% 12%; /* #1E1E2F */
+    --popover: 0 0% 100%; /* #FFFFFF */
+    --popover-foreground: 240 20% 12%; /* #1E1E2F */
+    --primary: 220 70% 55%; /* #2A6EEA */
+    --primary-foreground: 220 25% 98%; /* #F7F9FC */
+    --secondary: 220 30% 95%; /* #EAF2FF */
+    --secondary-foreground: 240 20% 12%; /* #1E1E2F */
+    --muted: 220 30% 95%; /* #EAF2FF */
+    --muted-foreground: 220 15% 45%; /* #6B7280 */
+    --accent: 220 70% 55%; /* #2A6EEA */
+    --accent-foreground: 220 25% 98%; /* #F7F9FC */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 220 25% 98%; /* #F7F9FC */
+    --border: 220 25% 90%; /* #DCE3F0 */
+    --input: 220 25% 90%; /* #DCE3F0 */
+    --ring: 220 70% 55%; /* #2A6EEA */
+    --radius: 0.5rem;
+    --chart-1: 220 70% 55%; /* #2A6EEA */
+    --chart-2: 220 60% 70%; /* #72A8FF */
+    --chart-3: 220 40% 80%; /* #EAF2FF */
+    --chart-4: 240 30% 25%; /* #1B2B4A */
+    --chart-5: 220 20% 15%; /* #101A28 */
+    --sidebar-background: 220 25% 97%; /* #F7F9FC */
+    --sidebar-foreground: 240 20% 12%; /* #1E1E2F */
+    --sidebar-primary: 220 70% 55%; /* #2A6EEA */
+    --sidebar-primary-foreground: 220 25% 98%; /* #F7F9FC */
+    --sidebar-accent: 220 30% 95%; /* #EAF2FF */
+    --sidebar-accent-foreground: 240 20% 12%; /* #1E1E2F */
+    --sidebar-border: 220 25% 90%; /* #DCE3F0 */
+    --sidebar-ring: 220 70% 55%; /* #2A6EEA */
+  }
+  .dark {
+    /* Ocean Slate Dark Mode */
+    --background: 220 20% 8%; /* #101A28 */
+    --foreground: 220 30% 95%; /* #E4ECF9 */
+    --card: 220 25% 12%; /* #1A2539 */
+    --card-foreground: 220 30% 98%; /* #F8FAFF */
+    --popover: 220 25% 12%; /* #1A2539 */
+    --popover-foreground: 220 30% 95%; /* #E4ECF9 */
+    --primary: 220 70% 55%; /* #2A6EEA */
+    --primary-foreground: 220 20% 8%; /* #101A28 */
+    --secondary: 220 25% 20%; /* #1A2539 */
+    --secondary-foreground: 220 30% 95%; /* #E4ECF9 */
+    --muted: 220 25% 20%; /* #1A2539 */
+    --muted-foreground: 220 15% 75%; /* #B8C7D9 */
+    --accent: 220 60% 70%; /* #72A8FF */
+    --accent-foreground: 220 20% 8%; /* #101A28 */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 220 30% 95%; /* #E4ECF9 */
+    --border: 220 25% 20%; /* #1A2539 */
+    --input: 220 25% 20%; /* #1A2539 */
+    --ring: 220 70% 55%; /* #2A6EEA */
+    --chart-1: 220 70% 55%; /* #2A6EEA */
+    --chart-2: 220 60% 70%; /* #72A8FF */
+    --chart-3: 220 50% 80%; /* #54A0EB */
+    --chart-4: 220 30% 25%; /* #1B2B4A */
+    --chart-5: 220 20% 15%; /* #101A28 */
+    --sidebar-background: 220 25% 12%; /* #1A2539 */
+    --sidebar-foreground: 220 30% 95%; /* #E4ECF9 */
+    --sidebar-primary: 220 70% 55%; /* #2A6EEA */
+    --sidebar-primary-foreground: 220 20% 8%; /* #101A28 */
+    --sidebar-accent: 220 25% 20%; /* #1A2539 */
+    --sidebar-accent-foreground: 220 30% 95%; /* #E4ECF9 */
+    --sidebar-border: 220 25% 20%; /* #1A2539 */
+    --sidebar-ring: 220 70% 55%; /* #2A6EEA */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* New Chat Design Styles */
+.chat-message-ai {
+  background-color: #f3f4f6 !important;
+  color: #374151 !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 8px !important;
+  padding: 12px 16px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+.dark .chat-message-ai {
+  background-color: #1a2539 !important;
+  color: #f8faff !important;
+  border: 1px solid #2a3a4a !important;
+  border-radius: 8px !important;
+  padding: 12px 16px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+.chat-message-user {
+  background-color: #2563eb !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 12px 16px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+.chat-message-user * {
+  color: white !important;
+}
+
+.chat-message-user strong {
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+.chat-message-user p {
+  color: white !important;
+}
+
+.chat-message-user li {
+  color: white !important;
+}
+
+/* Enhanced Chat Message Styling */
+.markdown-content,
+.formal-answer {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #1E1E2F;
+}
+
+/* Headings */
+.markdown-content h3,
+.formal-answer h3 {
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  color: #2A6EEA !important;
+  margin: 1em 0 0.5em 0 !important;
+  border-bottom: 2px solid #72A8FF !important;
+  padding-bottom: 0.3em !important;
+}
+
+.markdown-content h4,
+.formal-answer h4 {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: #2A6EEA !important;
+  margin: 0.8em 0 0.3em 0 !important;
+}
+
+/* Strong/Bold Text */
+.markdown-content strong,
+.formal-answer strong {
+  font-weight: 700 !important;
+  color: #2A6EEA !important;
+  font-size: 0.95rem !important;
+}
+
+/* Lists */
+.markdown-content ul,
+.markdown-content ol,
+.formal-answer ul,
+.formal-answer ol {
+  margin: 0.6em 0 0.6em 1.2em !important;
+  padding-left: 0.3em !important;
+}
+
+.markdown-content li,
+.formal-answer li {
+  margin: 0.4em 0 !important;
+  line-height: 1.5 !important;
+  color: #1E1E2F !important;
+}
+
+.markdown-content ul,
+.formal-answer ul {
+  list-style: none !important;
+}
+
+.markdown-content ol,
+.formal-answer ol {
+  list-style: decimal !important;
+}
+
+/* Paragraphs */
+.markdown-content p,
+.formal-answer p {
+  margin: 0.6em 0 !important;
+  line-height: 1.6 !important;
+  color: #1E1E2F !important;
+}
+
+/* Blockquotes */
+.markdown-content blockquote,
+.formal-answer blockquote {
+  margin: 0.8em 0 !important;
+  padding: 0.8em 1em !important;
+  border-left: 4px solid #72A8FF !important;
+  background-color: #EAF2FF !important;
+  border-radius: 0 0.375rem 0.375rem 0 !important;
+  font-style: normal !important;
+  color: #2A6EEA !important;
+}
+
+/* Dark Mode Enhancements */
+.dark .markdown-content,
+.dark .formal-answer,
+.dark .markdown-content *,
+.dark .formal-answer * {
+  color: #F8FAFF !important;
+}
+
+.dark .markdown-content h3,
+.dark .formal-answer h3,
+.dark .markdown-content h4,
+.dark .formal-answer h4,
+.dark .markdown-content strong,
+.dark .formal-answer strong {
+  color: #72A8FF !important;
+}
+
+.dark .markdown-content h3,
+.dark .formal-answer h3 {
+  border-bottom-color: #54A0EB !important;
+}
+
+.dark .markdown-content li,
+.dark .formal-answer li,
+.dark .markdown-content p,
+.dark .formal-answer p {
+  color: #F8FAFF !important;
+  box-shadow: none !important; /* <-- Removed shadow from <p> tags */
+}
+
+.dark .markdown-content blockquote,
+.dark .formal-answer blockquote {
+  background-color: #1A2539 !important;
+  color: #72A8FF !important;
+  border-left-color: #54A0EB !important;
+}
+
+/* Removed global shadow from markdown container */
+.dark .markdown-content,
+.dark .formal-answer {
+  /* box-shadow removed */
+}
+
+/* Dark Mode Soft Borders */
+.dark .markdown-content blockquote,
+.dark .formal-answer blockquote {
+  border-left-width: 3px !important;
+  border-left-color: #54A0EB !important;
+}
+
+/* Font rendering optimization for dark mode */
+.dark *,
+.dark *::before,
+.dark *::after {
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* Specific chat message font optimization */
+.dark .markdown-content,
+.dark .formal-answer,
+.dark [class*="markdown-content"],
+.dark [class*="formal-answer"] {
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+.dark .markdown-content *,
+.dark .formal-answer *,
+.dark [class*="markdown-content"] *,
+.dark [class*="formal-answer"] * {
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* ReactMarkdown Component Styles - High Specificity */
+.dark .markdown-content .explain-prompt,
+.dark .formal-answer .explain-prompt {
+  background-color: #1A2539 !important;
+  border-color: #54A0EB !important;
+  color: #72A8FF !important;
+}
+
+.markdown-content .explain-prompt,
+.formal-answer .explain-prompt {
+  margin: 1em 0 0.5em 0 !important;
+  padding: 0.8em 1em !important;
+  background-color: #EAF2FF !important;
+  border: 1px solid #72A8FF !important;
+  border-radius: 0.5rem !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5em !important;
+  font-size: 0.95rem !important;
+  color: #2A6EEA !important;
+  font-style: italic !important;
+}
+
+.dark .markdown-content .markdown-paragraph,
+.dark .formal-answer .markdown-paragraph {
+  color: #F8FAFF !important;
+}
+
+.markdown-content .markdown-paragraph,
+.formal-answer .markdown-paragraph {
+  margin: 0.6em 0 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  color: #1E1E2F !important;
+}
+
+.dark .markdown-content .markdown-strong,
+.dark .formal-answer .markdown-strong {
+  color: #72A8FF !important;
+}
+
+.markdown-content .markdown-strong,
+.formal-answer .markdown-strong {
+  font-weight: 700 !important;
+  color: #2A6EEA !important;
+  font-size: 0.95rem !important;
+}
+
+.dark .markdown-content .markdown-list-item,
+.dark .formal-answer .markdown-list-item {
+  color: #F8FAFF !important;
+}
+
+.markdown-content .markdown-list-item,
+.formal-answer .markdown-list-item {
+  margin: 0.4em 0 !important;
+  line-height: 1.5 !important;
+  color: #1E1E2F !important;
+  position: relative !important;
+  padding-left: 1.5em !important;
+  padding-bottom: 0.2em !important;
+}
+
+.dark .markdown-content .markdown-checkmark,
+.dark .formal-answer .markdown-checkmark {
+  color: #72A8FF !important;
+}
+
+.markdown-content .markdown-checkmark,
+.formal-answer .markdown-checkmark {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0.1em !important;
+  color: #2A6EEA !important;
+  font-size: 1.2em !important;
+}
+
+.dark .markdown-content .markdown-h3,
+.dark .formal-answer .markdown-h3 {
+  color: #72A8FF !important;
+  border-bottom-color: #54A0EB !important;
+}
+
+.markdown-content .markdown-h3,
+.formal-answer .markdown-h3 {
+  margin: 1em 0 0.5em 0 !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  color: #2A6EEA !important;
+  border-bottom: 2px solid #72A8FF !important;
+  padding-bottom: 0.3em !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 0.5em !important;
+  line-height: 1.2 !important;
+}
+
+.dark .markdown-content .markdown-h4,
+.dark .formal-answer .markdown-h4 {
+  color: #72A8FF !important;
+}
+
+.markdown-content .markdown-h4,
+.formal-answer .markdown-h4 {
+  margin: 0.8em 0 0.3em 0 !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: #2A6EEA !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 0.4em !important;
+  line-height: 1.2 !important;
+}
+
+.markdown-content .markdown-icon,
+.formal-answer .markdown-icon {
+  font-size: 1.2em !important;
+  display: flex !important;
+  align-items: center !important;
+  margin-top: 0.1em !important;
+}
+
+.dark .markdown-content .markdown-blockquote,
+.dark .formal-answer .markdown-blockquote {
+  background-color: #1A2539 !important;
+  color: #72A8FF !important;
+  border-left-color: #54A0EB !important;
+}
+
+.markdown-content .markdown-blockquote,
+.formal-answer .markdown-blockquote {
+  margin: 0.8em 0 !important;
+  padding: 0.8em 1em !important;
+  border-left: 4px solid #72A8FF !important;
+  background-color: #EAF2FF !important;
+  border-radius: 0 0.375rem 0.375rem 0 !important;
+  font-style: normal !important;
+  color: #2A6EEA !important;
+  position: relative !important;
+}
+
+.markdown-content .markdown-blockquote-icon,
+.formal-answer .markdown-blockquote-icon {
+  position: absolute !important;
+  top: 0.5em !important;
+  right: 0.5em !important;
+  font-size: 1.2em !important;
+}
+
+/* Animation for new messages */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.markdown-content,
+.formal-answer {
+  animation: fadeInUp 0.2s ease-out;
+}
+
+/* Shimmer animations for light beam effect */
+@keyframes shimmer-x {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes shimmer-y {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-15px); 
+  }
+}
+
+.animate-shimmer-x {
+  animation: shimmer-x 2s ease-in-out infinite;
+}
+
+.animate-shimmer-y {
+  animation: shimmer-y 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Custom Intro.js styling */
+.customTooltip {
+  background: white !important;
+  color: #1f2937 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+  font-family: inherit !important;
+  border: 1px solid #e5e7eb !important;
+  width: 320px !important;
+  max-width: 320px !important;
+  position: relative !important;
+  padding-top: 12px !important;
+}
+
+.customTooltip .introjs-tooltip-title {
+  color: #1f2937 !important;
+  font-weight: 600 !important;
+  font-size: 1.1rem !important;
+}
+
+.customTooltip .introjs-tooltiptext {
+  color: #6b7280 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.5 !important;
+}
+
+.customTooltip .introjs-button {
+  background: #f3f4f6 !important;
+  color: #374151 !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 6px !important;
+  padding: 8px 16px !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+}
+
+.customTooltip .introjs-button:hover {
+  background: #e5e7eb !important;
+  transform: translateY(-1px) !important;
+}
+
+.customTooltip .introjs-button.introjs-skipbutton,
+.customTooltip a.introjs-skipbutton {
+  background: none !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  padding: 0 !important;
+  position: static !important;
+  bottom: auto !important;
+  left: auto !important;
+  transform: none !important;
+  z-index: 1000 !important;
+  min-width: auto !important;
+  width: auto !important;
+  text-decoration: underline !important;
+  display: block !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 0 !important;
+  border: none !important;
+  color: #6b7280 !important;
+  cursor: pointer !important;
+  box-shadow: none !important;
+  transition: all 0.2s ease !important;
+  letter-spacing: 0.025em !important;
+  text-transform: none !important;
+  margin: 8px 0 12px 0 !important;
+  text-align: center !important;
+  order: 1 !important;
+}
+
+/* Force skip button to appear before the tooltip text */
+.customTooltip .introjs-tooltiptext {
+  order: 2 !important;
+  margin-top: 0 !important;
+}
+
+/* Keep the top-right skip button visible - text only */
+.customTooltip .introjs-tooltip-title + .introjs-button.introjs-skipbutton,
+.customTooltip .introjs-tooltip-title + a.introjs-skipbutton {
+  display: block !important;
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  background: none !important;
+  color: #6b7280 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: -12 !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+  text-decoration: underline !important;
+  box-shadow: none !important;
+  text-align: center !important;
+  margin: -7px 0 -20px !important;
+}
+
+.customTooltip .introjs-button.introjs-skipbutton:hover,
+.customTooltip a.introjs-skipbutton:hover {
+  background: none !important;
+  transform: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+  color: #374151 !important;
+  text-decoration: underline !important;
+}
+
+.customTooltip .introjs-button.introjs-donebutton {
+  background: rgba(59, 130, 246, 0.8) !important;
+  border-color: rgba(59, 130, 246, 0.9) !important;
+}
+
+.customTooltip .introjs-button.introjs-donebutton:hover {
+  background: rgba(59, 130, 246, 1) !important;
+}
+
+.customHighlight {
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5) !important;
+  border-radius: 8px !important;
+}
+
+.introjs-overlay {
+  background: rgba(0, 0, 0, 0.85) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 999998 !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Force backdrop to show */
+.introjs-overlay[style] {
+  background: rgba(0, 0, 0, 0.85) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+/* Ensure overlay is visible when tour is active */
+body.introjs-showElement .introjs-overlay {
+  background: rgba(0, 0, 0, 0.85) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+/* Make info button icons white only when tutorial is on help & information step (step 6) */
+.introjs-showElement[data-step="6"] .info-button svg,
+.introjs-showElement[data-step="6"] .info-button .h-5,
+.introjs-showElement[data-step="6"] .info-button .w-5,
+.introjs-showElement[data-step="6"] .info-button * {
+  color: white !important;
+  fill: white !important;
+  stroke: white !important;
+}
+
+/* Make clear chat icons white only when tutorial is on clear chat step (step 7) */
+.introjs-showElement[data-step="7"] .clear-chat svg,
+.introjs-showElement[data-step="7"] .clear-chat .h-5,
+.introjs-showElement[data-step="7"] .clear-chat .w-5,
+.introjs-showElement[data-step="7"] .clear-chat * {
+  color: white !important;
+  fill: white !important;
+  stroke: white !important;
+}
+
+body.introjs-showElement[data-step="6"] .info-button svg,
+body.introjs-showElement[data-step="6"] .info-button .h-5,
+body.introjs-showElement[data-step="6"] .info-button .w-5,
+body.introjs-showElement[data-step="6"] .info-button * {
+  color: white !important;
+  fill: white !important;
+  stroke: white !important;
+}
+
+body.introjs-showElement[data-step="7"] .clear-chat svg,
+body.introjs-showElement[data-step="7"] .clear-chat .h-5,
+body.introjs-showElement[data-step="7"] .clear-chat .w-5,
+body.introjs-showElement[data-step="7"] .clear-chat * {
+  color: white !important;
+  fill: white !important;
+  stroke: white !important;
+}
+
+.introjs-showElement[data-step="6"] .info-button button svg,
+.introjs-showElement[data-step="6"] .info-button button .h-5,
+.introjs-showElement[data-step="6"] .info-button button .w-5,
+.introjs-showElement[data-step="6"] .info-button button *,
+.introjs-showElement[data-step="6"] .info-button button:hover svg,
+.introjs-showElement[data-step="6"] .info-button button:hover .h-5,
+.introjs-showElement[data-step="6"] .info-button button:hover .w-5,
+.introjs-showElement[data-step="6"] .info-button button:hover * {
+  color: white !important;
+  fill: white !important;
+  stroke: white !important;
+}
+
+.introjs-showElement[data-step="7"] .clear-chat button svg,
+.introjs-showElement[data-step="7"] .clear-chat button .h-5,
+.introjs-showElement[data-step="7"] .clear-chat button .w-5,
+.introjs-showElement[data-step="7"] .clear-chat button *,
+.introjs-showElement[data-step="7"] .clear-chat button:hover svg,
+.introjs-showElement[data-step="7"] .clear-chat button:hover .h-5,
+.introjs-showElement[data-step="7"] .clear-chat button:hover .w-5,
+.introjs-showElement[data-step="7"] .clear-chat button:hover * {
+  color: white !important;
+  fill: white !important;
+  stroke: white !important;
+}
+
+.introjs-showElement[data-step="6"] .info-button .text-blue-600,
+.introjs-showElement[data-step="6"] .info-button .text-blue-400,
+.introjs-showElement[data-step="6"] .info-button .dark\:text-blue-400,
+.introjs-showElement[data-step="6"] .info-button .text-gray-600,
+.introjs-showElement[data-step="6"] .info-button .text-gray-400 {
+  color: white !important;
+}
+
+.introjs-showElement[data-step="7"] .clear-chat .text-blue-600,
+.introjs-showElement[data-step="7"] .clear-chat .text-blue-400,
+.introjs-showElement[data-step="7"] .clear-chat .dark\:text-blue-400,
+.introjs-showElement[data-step="7"] .clear-chat .text-gray-600,
+.introjs-showElement[data-step="7"] .clear-chat .text-gray-400 {
+  color: white !important;
+}
+
+/* Force override with maximum specificity */
+html body.introjs-showElement[data-step="6"] .info-button *,
+html body.introjs-showElement[data-step="7"] .clear-chat * {
+  color: white !important;
+  fill: white !important;
+  stroke: white !important;
+}
+
+.introjs-helperLayer {
+  border: 2px solid #3b82f6 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3) !important;
+}
+
+/* Ensure tooltips stay within screen boundaries */
+.introjs-tooltip {
+  position: fixed !important;
+  max-width: 320px !important;
+  max-height: 80vh !important;
+  overflow: hidden !important;
+  z-index: 999999 !important;
+}
+
+/* Prevent tooltips from going off-screen */
+.introjs-tooltip[data-position="bottom"] {
+  margin-top: 5px !important;
+}
+
+.introjs-tooltip[data-position="top"] {
+  margin-bottom: 5px !important;
+}
+
+.introjs-tooltip[data-position="left"] {
+  margin-right: 5px !important;
+}
+
+.introjs-tooltip[data-position="right"] {
+  margin-left: 5px !important;
+}
+
+/* Ensure tooltip content doesn't overflow */
+.introjs-tooltiptext {
+  max-height: 60vh !important;
+  overflow-y: auto !important;
+  word-wrap: break-word !important;
+}
+
+/* Custom positioning for header button tooltips */
+/* Force theme toggle tooltip positioning with maximum specificity */
+/* Position tooltip relative to theme toggle element */
+.introjs-showElement .theme-toggle + .introjs-tooltip,
+.introjs-tooltip[data-step="5"] {
+  position: absolute !important;
+  top: 100% !important;
+  left: 580% !important;
+  right: auto !important;
+  bottom: auto !important;
+  margin: 0 !important;
+  /* transform: translateX(-50%) !important; */
+  margin-top: 10px !important;
+  z-index: 999999 !important;
+}
+
+.introjs-tooltip[data-step="6"],
+.introjs-tooltip[data-step="7"] {
+  position: fixed !important;
+  top: 175px !important;
+  left: 721px !important;
+  right: auto !important;
+  bottom: auto !important;
+  margin-left: 0px !important;
+  margin-top: 0px !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Force positioning with higher specificity */
+body .introjs-tooltip[data-step="6"],
+body .introjs-tooltip[data-step="7"] {
+  position: fixed !important;
+  top: 175px !important;
+  left: 721px !important;
+  right: auto !important;
+  bottom: auto !important;
+  margin: 0 !important;
+  transform: none !important;
+  z-index: 999999 !important;
+}
+
+/* Override any inline styles */
+.introjs-tooltip[data-step="6"][style],
+.introjs-tooltip[data-step="7"][style] {
+  position: fixed !important;
+  top: 175px !important;
+  left: 721px !important;
+  right: auto !important;
+  bottom: auto !important;
+  margin: 0 !important;
+  transform: none !important;
+}
+
+/* Force positioning with maximum specificity */
+html body .introjs-tooltip[data-step="6"],
+html body .introjs-tooltip[data-step="7"] {
+  position: fixed !important;
+  top: 175px !important;
+  left: 721px !important;
+  right: auto !important;
+  bottom: auto !important;
+  margin: 0 !important;
+  transform: none !important;
+  z-index: 999999 !important;
+}
+
+/* Override any dynamic positioning */
+.introjs-tooltip[data-step="6"] *,
+.introjs-tooltip[data-step="7"] * {
+  position: static !important;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .introjs-tooltip {
+    max-width: 280px !important;
+    max-height: 70vh !important;
+    margin: 10px !important;
+  }
+  
+  .introjs-tooltiptext {
+    max-height: 50vh !important;
+    font-size: 0.9rem !important;
+  }
+  
+  /* Override custom positioning on mobile */
+
+  .introjs-tooltip[data-step="6"],
+  .introjs-tooltip[data-step="7"] {
+    position: relative !important;
+    top: auto !important;
+    margin-left: auto !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .introjs-tooltip {
+    max-width: 250px !important;
+    max-height: 60vh !important;
+    margin: 8px !important;
+  }
+  
+  .introjs-tooltiptext {
+    max-height: 40vh !important;
+    font-size: 0.85rem !important;
+  }
+}

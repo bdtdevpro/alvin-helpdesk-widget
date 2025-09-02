@@ -1,0 +1,1 @@
+{"version":3,"file":"types.js","sourceRoot":"","sources":["types.ts"],"names":[],"mappings":"","sourcesContent":["\r\nexport interface Message {\r\n  id: string;\r\n  role: \"user\" | \"assistant\" | \"system\";\r\n  content: string;\r\n  suggestions?: string[];\r\n}\r\n\r\n\r\n"]}
