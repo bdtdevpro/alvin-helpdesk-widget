@@ -415,11 +415,16 @@ export function ChatWidget({ isEmbedded = false }: ChatWidgetProps) {
         )}>
           <Card
             className={cn(
-              "w-[calc(100vw-32px)] sm:w-[380px] h-[60vh] sm:h-[550px] flex flex-col rounded-2xl border-border",
-              isEmbedded && 'bg-transparent'
+              "w-[calc(100vw-32px)] sm:w-[380px] h-[60vh] sm:h-[550px] flex flex-col rounded-2xl border-border shadow-sm",
+              isEmbedded && 'bg-transparent border-none shadow-none'
             )}
           >
-            <CardHeader className="flex flex-row items-center justify-between bg-primary text-primary-foreground p-4 rounded-t-2xl">
+            <CardHeader
+              className={cn(
+                'flex flex-row items-center justify-between p-4 rounded-t-2xl',
+                isEmbedded ? 'bg-transparent border-none' : 'bg-primary text-primary-foreground'
+              )}
+            >
               <div className="flex items-center gap-1 min-w-0">
                 <Avatar className="bg-transparent border-none shadow-none">
                   <AvatarFallback className="bg-transparent p-0 text-white">
