@@ -15,5 +15,5 @@ window.initAlvinHelpdesk = (opts) => {
     console.error(`Container with id "${containerId}" not found.`);
     return;
   }
-  ReactDOM.render(<ChatWidget {...rest} />, container);
+  ReactDOM.render(<ChatWidget isEmbedded {...rest} />, container);
 };

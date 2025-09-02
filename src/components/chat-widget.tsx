@@ -15,7 +15,11 @@ import alvinAvatar from '@/app/images/alvin-avatar.png';
 import alvinIconWhite from '@/app/images/alvin-icon-white.png';
 import { ChatMessage } from './chat-message';
 
-export function ChatWidget() {
+interface ChatWidgetProps {
+  isEmbedded?: boolean;
+  // other props like apiBase, suggestionsBase, theme can be passed through rest
+}
+export function ChatWidget({ isEmbedded = false }: ChatWidgetProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -409,7 +413,12 @@ export function ChatWidget() {
           "transition-all duration-300 ease-in-out transform", 
           isOpen && !isExpanded ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
         )}>
-          <Card className="w-[calc(100vw-32px)] sm:w-[380px] h-[60vh] sm:h-[550px] flex flex-col rounded-2xl border-border">
+          <Card
+            className={cn(
+              "w-[calc(100vw-32px)] sm:w-[380px] h-[60vh] sm:h-[550px] flex flex-col rounded-2xl border-border",
+              isEmbedded && 'bg-transparent'
+            )}
+          >
             <CardHeader className="flex flex-row items-center justify-between bg-primary text-primary-foreground p-4 rounded-t-2xl">
               <div className="flex items-center gap-1 min-w-0">
                 <Avatar className="bg-transparent border-none shadow-none">
@@ -458,7 +467,12 @@ export function ChatWidget() {
             </CardHeader>
             <CardContent className="flex-1 p-0 flex flex-col min-h-0">
                 {showTopics && !isLoading && (
-                    <div className="flex flex-col items-center justify-center min-h-[60vh] text-center bg-white dark:bg-[#181f2a] text-black dark:text-white px-4 pb-16 sm:pb-20 md:pb-24 lg:pb-28 xl:pb-32 xl-mid:pb-5 2xl:pb-48">
+                    <div
+                      className={cn(
+                        'flex flex-col items-center justify-center min-h-[60vh] text-center px-4 pb-48',
+                        !isEmbedded && 'bg-white dark:bg-[#181f2a] text-black dark:text-white'
+                      )}
+                    >
                         <h1 className="text-xl font-bold text-black dark:text-white break-words leading-snug">Ask me anything...</h1>
                         <p className="text-xs text-gray-600 dark:text-gray-300 pb-8 break-words">Choose a category below or type your question directly</p>
                         <div className="flex flex-col gap-2 w-full max-w-md mx-auto">
